@@ -1,0 +1,36 @@
+<html>
+<head>
+    <title>Live Map</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <script src="https://kit.fontawesome.com/5537a772c3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="map">
+        <div id="server-name"></div>
+        <div id="info">
+            <div id="weather-container">
+                <div id="time"></div>
+                <div id="weather"></div>
+                <div id="wind"></div>
+            </div>
+            <div id="tab-bar">
+                <button id="players-button" class="tab-button active" data-tab="player-list-container">Players</button>
+            </div>
+            <div class="tab" id="player-list-container">
+                <div id="player-list"></div>
+            </div>
+        </div>
+        <div id="blips"></div>
+        <div id="blip-tags"></div>
+        <div id="coords"></div>
+        <div id="shot-blips"></div>
+        <div id="zoom-controls">
+            <button id="zoom-in">Zoom In</button>
+            <button id="zoom-out">Zoom Out</button>
+        </div>
+    </div>
+</body>
+    <script src="script.js" defer></script>
+</html>

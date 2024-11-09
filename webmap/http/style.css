@@ -1,0 +1,226 @@
+@font-face {
+    font-family: "Chinese Rocks";
+    src: url("rdr3/chineserocks.ttf");
+}
+
+@font-face {
+    font-family: "Pricedown";
+    src: url("gta5/pricedown.otf");
+}
+
+html, body {
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    font-family: Helvetica;
+    overflow: auto; /* Ensure overflow is not hidden */
+}
+
+/* Custom scrollbars for WebKit browsers (Chrome, Safari) */
+body::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #4b5563; /* Thumb color */
+    border-radius: 10px;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: #1f2937; /* Track color */
+}
+
+/* Custom scrollbars for Firefox */
+body {
+    scrollbar-width: thin; /* Scrollbar width */
+    scrollbar-color: #4b5563 #1f2937; /* Thumb and track colors */
+}
+
+a {
+    color: cornflowerblue;
+    text-decoration: none;
+}
+
+/* Custom scrollbars for WebKit browsers (Chrome, Safari) */
+#map::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+}
+
+#map::-webkit-scrollbar-thumb {
+    background-color: #4b5563; /* Thumb color */
+    border-radius: 10px;
+}
+
+#map::-webkit-scrollbar-track {
+    background-color: #1f2937; /* Track color */
+}
+
+/* Custom scrollbars for Firefox */
+#map {
+    scrollbar-width: thin; /* Scrollbar width */
+    scrollbar-color: #4b5563 #1f2937; /* Thumb and track colors */
+}
+
+/* Optional: Adjusting overflow styles */
+#map {
+    overflow: auto; /* Ensure scrollbars are visible */
+}
+
+
+#map {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover; /* Adjust as needed */
+    overflow: auto; /* Ensure scrollbars are visible */
+    transition: transform 0.2s ease; /* Smooth zoom transitions */
+    cursor: grab; /* Change cursor to grab */
+}
+
+#server-name {
+    position: absolute;
+    bottom: 3%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 0.5vh 0.5vw;
+    font-size: 2.5vh;
+}
+
+#info {
+    display: flex;
+    flex-flow: column;
+    position: absolute;
+    top: 3%;
+    left: 3%;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1vh 1vw;
+    color: white;
+    max-height: 90%; /* Limit height to enable scroll */
+    overflow: auto; /* Ensure scrollbars are visible */
+}
+
+#tab-bar {
+    padding-top: 1vh;
+    display: flex;
+    gap: 0.5vh 0.5vw;
+}
+
+.tab-button {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 2.5vh;
+    padding: 0;
+    border-bottom: solid 1px rgba(0, 0, 0, 0);
+}
+
+.tab-button:active, .tab-button:hover, .tab-button:focus {
+    border-bottom: 1px solid white;
+}
+
+.tab-button.active {
+    color: white;
+    border-bottom: 1px solid red;
+}
+
+.tab {
+    padding-top: 0.5vh;
+}
+
+#player-list {
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    grid-gap: 1vh 1vw;
+    font-size: 1.5vh;
+    padding-top: 1vh;
+}
+
+.player {
+    display: contents;
+}
+
+.player-id {
+    text-align: right;
+}
+
+.player-name, .player-health {
+    white-space: nowrap;
+}
+
+.player-health {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    grid-gap: 0.25em;
+    align-items: baseline;
+    text-align: right;
+}
+
+.blip {
+    background-image: url("http/blip.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    width: 1vw;
+    height: 1vw;
+}
+
+.blip.dead {
+    background-image: url("http/blip_dead.svg");
+}
+
+.blip.pin {
+    background-image: url("http/blip_pin.svg");
+    width: 1.5vw;
+    height: 1.5vw;
+}
+
+.blip-tag {
+    position: absolute;
+    transform: translate(-100%, -100%);
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-size: 1.5vh;
+    padding: 0.25vh 0.25vw;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 0.5vh 0.5vw;
+}
+
+#coords {
+    position: absolute;
+    right: 3%;
+    bottom: 3%;
+    font-size: 1.25vh;
+}
+
+.blip.shot {
+    background-image: url("blip_shot.svg");  /* You will need an SVG for gunshot */
+    width: 0.5vw;
+    height: 0.5vw;
+}
+
+#zoom-controls {
+    position: absolute;
+    top: 3%;
+    right: 3%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5vh;
+}
+
+#zoom-controls button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 0.5vh 1vw;
+    font-size: 1.5vh;
+    cursor: pointer;
+}
+
+#zoom-controls button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
